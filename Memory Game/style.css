@@ -1,0 +1,58 @@
+/** Ajusta as imagens a borda */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/** Configuração do body*/
+body {
+  height: 100vh;
+  display: flex;
+  background: #e4c515;
+}
+/** Configuração das imagens que irão no card */
+/** Display flex alinha as cartas junto ao seus pares uma ao lado da outra*/
+#cardboard {
+  width: 640px;
+  height: 640px;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+/** Configuração do tamanho e resolução dos card*/
+/** A condição "position: relative" faz com que a sobre posição seja feita
+somente sobre os cards e não sobre toda a tela*/
+/** calc dentro da condição "widht" faz co que os cards se alinhem em uma
+matriz 4x4*/
+.memory-card {
+  width: calc(25% - 10px);
+  height: 33%;
+  margin: 5px;
+  transform-style: preserve-3d;
+  transition: 0.3s;
+  position: relative;
+}
+/** Faz com que haja uma animação ao click em cima dos card*/
+.memory-card:active {
+  transform: scale(0.97);
+}
+/** Transformação que faz com que haja a troca de posiçoes do card*/
+.memory-card.flip {
+  transform: rotateY(180deg);
+}
+/** Configuração de tamanho e cores de frente verso dos cards*/
+/** A condição "positon: absolute" faz com que a imagem destinada a ser o verso sobreponha
+as imagens destinadas a ser a frente dos cards*/
+.front-face,
+.back-face {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  position: absolute;
+  background: #675a10;
+}
+/** Onde será aplicado a função e ação do giro da carta*/
+.front-face {
+  transform: rotateY(180deg);
+}
+location.reload(true);  
